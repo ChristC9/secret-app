@@ -1,5 +1,5 @@
 from pathlib import Path
-import django_heroku
+import django_heroku,os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,9 +15,6 @@ SECRET_KEY = 'django-insecure-(@_%j!-7=%7)pxseqis+t#i23nx%#86tf7jjg7am8ycr69p3kr
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-
-
 
 # Application definition
 
@@ -47,7 +44,6 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'backend.urls'
 
 CORS_ALLOW_ALL_ORIGINS = True
-
 
 TEMPLATES = [
     {
@@ -116,7 +112,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR,'images/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+
+CORS_ALLOW_ALL_ORIGINS = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
